@@ -19,8 +19,7 @@ const ContentSection = ({type, heading}) => {
 
     return (
         <section className='content-section'>
-            <h1>Latest {heading}</h1>
-            
+            <h1>Latest {heading}</h1>            
             <section className="container">
                 {content.map(item => <Card key={item.id} item={item} type={type} />)}
             </section>
