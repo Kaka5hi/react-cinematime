@@ -1,6 +1,7 @@
 import React from 'react'
 import './Cast.css'
 import { useParams } from 'react-router'
+import CastImg from '../CastImg/CastImg'
 
 
 const Cast = () => {
@@ -16,13 +17,21 @@ const Cast = () => {
     }
 
     React.useEffect(()=> {
-        getInfo(param.type, param.id)
-    }, [])
+        let data = true
+        if(data) {
+            getInfo(param.type, param.id)
+        }
+
+        return(()=>{
+            data = false
+            setToggleCast(true)
+        })
+    }, [param.type, param.id])
 
     const limitedCast = info.slice(0,5).map(actor => {
         return(
             <article key={actor.id} className='details'>
-                <img src={`https://image.tmdb.org/t/p/w500`+actor.profile_path} alt={actor.original_name} />
+                <CastImg image={actor.profile_path} name={actor.original_name}/>
                 <span>{actor.character}</span>
                 <p>{actor.original_name}</p>
             </article>
@@ -32,13 +41,12 @@ const Cast = () => {
     const allCast =  info.slice(0,10).map(actor => {
         return(
             <article key={actor.id} className='details'>
-                <img src={`https://image.tmdb.org/t/p/w500`+actor.profile_path} alt={actor.original_name} />
+                <CastImg image={actor.profile_path} name={actor.original_name}/>
                 <span>{actor.character}</span>
                 <p>{actor.original_name}</p>
             </article>
         )
     })
-
 
     return (
         <div  className="casting-container">
