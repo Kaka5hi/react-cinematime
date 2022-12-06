@@ -93,7 +93,7 @@
 .modal-container > button {
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 50px;
   width: max-content;
   padding: 10px;
   margin-top: 10px;
@@ -115,4 +115,65 @@
   color: white;
   border: 1px solid white;
   transition: all 400ms ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-container > .modal-inner-container {
+    margin: 10px;
+  }
+
+  .modal-container > .modal-inner-container > .modal-content {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modal-container > .modal-inner-container {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .modal-container > .modal-inner-container > .modal-img > img {
+    width: 200px;
+    height: 300px;
+  }
+
+  .modal-container > button {
+    top: 10px;
+    right: 10px;
+    margin-top: 0;
+  }
+  .modal-container > .modal-inner-container > .modal-content {
+    margin-top: 5vh;
+    background: rgba(22, 21, 21, 0.7);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(5px);
+    color: white;
+    border-radius: 5px;
+  }
+
+  .modal-container > .modal-inner-container > .modal-content h1 {
+    font-size: 1.25rem;
+  }
+
+  .modal-container > .modal-inner-container > .modal-content > p {
+    -webkit-line-clamp: 3;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .modal-container > .modal-inner-container {
+    background-color: transparent;
+  }
+  .modal-container > .modal-inner-container > .modal-img > img {
+    width: 150px;
+    height: 220px;
+  }
+  .modal-container > .modal-inner-container > .modal-content > a {
+    font-size: 0.75em;
+  }
+
+  .modal-container > .modal-inner-container > .modal-content {
+    margin-top: 10vh;
+  }
 }
