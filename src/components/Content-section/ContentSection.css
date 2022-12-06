@@ -13,10 +13,9 @@
 .content-section > .container {
   margin: 5vh auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   place-items: center;
-  padding: 10px;
 }
 
 .content-section > a {
@@ -42,4 +41,19 @@
   color: white;
   border: 1px solid white;
   transition: all 400ms ease-in-out;
+}
+
+@media screen and (max-width: 900px) {
+  .content-section {
+    margin-top: 10vh;
+  }
+  .content-section > h1 {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .content-section {
+    margin: 10vh auto 0;
+  }
 }
