@@ -114,3 +114,60 @@ header > .center-section > .content > a:hover {
   border: 1px solid white;
   transition: all 400ms ease-in-out;
 }
+
+@media screen and (max-width: 900px) {
+  header > .center-section {
+    margin: 20vh 10px 0;
+  }
+
+  header > .center-section > .content {
+    padding: unset;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header > .center-section > .img > img {
+    width: 275px;
+    height: 400px;
+    margin: unset;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  header > .center-section > .img > img {
+    width: 250px;
+    height: 350px;
+    margin: unset;
+  }
+
+  header > .center-section > .content > h1 {
+    max-width: 650px;
+    font-size: 2em;
+  }
+  header > .center-section > .content > span {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  header > .center-section {
+    flex-direction: column;
+    margin-top: 20vh;
+  }
+  .content-section > h1 {
+    margin: unset;
+    text-align: center;
+  }
+
+  header > .center-section > .content > h1 {
+    text-align: center;
+  }
+
+  header > .center-section > .content > span {
+    display: none;
+  }
+
+  header > .center-section > .content > p {
+    display: none;
+  }
+}
