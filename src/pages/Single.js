@@ -3,6 +3,8 @@ import './Single.css'
 import { useParams } from 'react-router-dom'
 import {FaStar} from 'react-icons/fa'
 import Cast from '../components/Cast/Cast'
+import Trailer from '../components/Trailer/Trailer'
+import Suggestion from '../components/Suggestions/Suggestion'
 
 const Single = () => {
     let param = useParams()
@@ -18,8 +20,15 @@ const Single = () => {
     }
 
     React.useEffect(() => {
-        getInfo(param.type, param.id);
-    }, [])
+        let data = true
+        if(data) {
+            getInfo(param.type, param.id);
+        }
+        return (() => {
+            data = false;
+            window.scrollTo(0, 0);
+        })
+    }, [param.type, param.id])
 
     if(showInfo) {
         return (
@@ -34,7 +43,11 @@ const Single = () => {
                 <div className="container">
                     <section className="inner-container-one">
                         <div className="poster-container">
-                            <img src={`https://image.tmdb.org/t/p/original`+info.poster_path} alt={info.title || info.name} />
+                            {info.poster_path 
+                                ?<img src={`https://image.tmdb.org/t/p/original`+info.poster_path} alt={info.title || info.name} />
+                                :<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs8Qc3JQWjYZ1Moimi0xMVLbBrqS2DYvhnzA&usqp=CAU' alt={info.title || info.name}/>
+                            }
+                            
                         </div>
                         <div className="information-container">
                             <h1>{info.title || info.name}</h1>
@@ -52,12 +65,16 @@ const Single = () => {
                             <a href={info.homepage} target='_blank' className="website">Official link</a>
                         </div>
                     </section>
+                    <section className="inner-container-one">
+                        <Trailer title={info.title || info.name}/>
+                    </section>
+
+                    <Suggestion />
+
                 </div>
             </main>
         )
     }
-
-
 }
 
 export default Single
