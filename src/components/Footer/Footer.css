@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
+
+footer {
+  backdrop-filter: blur(5px) saturate(152%);
+  -webkit-backdrop-filter: blur(5px) saturate(152%);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+footer > .container {
+  max-width: 1440px;
+  padding: 10px;
+  margin: 2vh auto;
+}
+
+footer > .container > .footer-link-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer > .container > .footer-link-top h1 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Unica One", cursive;
+  font-size: 2rem;
+  text-transform: capitalize;
+
+  background: #ffae00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffae00,
+    #ff0000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffae00,
+    #ff0000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+footer > .container > .footer-link-top h1 svg {
+  color: white;
+}
+
+footer > .container > .footer-link-top > .social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+footer > .container > .footer-link-bot {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+footer > .container > .footer-link-bot h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  padding: 10px 0;
+}
+
+footer > .container > .footer-link-bot > div ul {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 400;
+  list-style: none;
+}
+
+footer > .container > .footer-link-bot > div > .footer-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 100px;
+}
+
+footer li:hover {
+  cursor: pointer;
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  footer > .container > .footer-link-bot {
+    justify-content: normal;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  footer > .container > .footer-link-bot > div > .footer-categories {
+    column-gap: 30px;
+  }
+
+  footer > .container > .footer-link-top {
+    flex-wrap: wrap;
+  }
+}
