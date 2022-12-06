@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
+
 nav {
   position: fixed;
   z-index: 100000;
@@ -14,13 +16,76 @@ nav > ul {
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
   list-style: none;
 }
 
-nav > ul li a {
+nav > ul > .left {
+  margin-right: auto;
+}
+
+nav > ul > .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-right: 5vw;
+}
+
+nav > ul > .left > li a,
+nav > ul > .right > li a {
+  width: max-content;
   text-decoration: none;
   text-transform: capitalize;
   color: white;
   font-weight: 700;
+}
+
+nav > ul > .left > li a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Unica One", cursive;
+  font-size: 2rem;
+  text-transform: capitalize;
+
+  background: #ffae00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffae00,
+    #ff0000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffae00,
+    #ff0000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+nav > ul > .left > li a svg {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+@media screen and (max-width: 520px) {
+  nav {
+    position: static;
+  }
+
+  nav > ul {
+    gap: 20px;
+  }
+
+  nav > ul > .left {
+    margin: auto;
+  }
+
+  nav > ul > .right {
+    margin: auto;
+  }
 }
