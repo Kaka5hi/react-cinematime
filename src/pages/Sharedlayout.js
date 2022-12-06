@@ -1,15 +1,21 @@
 import React from 'react'
 import { Outlet, Link } from "react-router-dom";
 import './Sharedlayout.css'
+import {RiMovieFill} from 'react-icons/ri'
 
 const Sharedlayout = () => {
     return (
         <>
             <nav>
                 <ul>
-                    <li><Link to='/'>home</Link></li>
-                    <li><Link to='/movie'>movies</Link></li>
-                    <li><Link to='/tv'>tv shows</Link></li>
+                    <div className="left">
+                        <li><Link to='/'><RiMovieFill/>Cinematime</Link></li>
+                    </div>
+                    <div className="right">
+                        <li><Link to='/'>home</Link></li>
+                        <li><Link to='/movie'>movies</Link></li>
+                        <li><Link to='/tv'>tv shows</Link></li>
+                    </div>
                 </ul>
             </nav>
             <Outlet />
