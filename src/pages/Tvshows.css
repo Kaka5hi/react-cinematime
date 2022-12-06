@@ -14,16 +14,36 @@
 .tv-section > .current-tv-category {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 50px;
-  list-style: none;
-  text-transform: capitalize;
-  font-size: 1.25rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tv-section > .current-tv-category > .search-side > form > input {
+  width: 500px;
+  padding: 10px;
   font-weight: 700;
+  font-size: 1rem;
+  font-family: inherit;
+  border: none;
+  border-radius: 5px;
+  outline: none;
   margin-top: 10px;
 }
 
-.tv-section > .current-tv-category > button {
+.tv-section > .current-tv-category > .search-side > form > input::placeholder {
+  font-weight: 400;
+}
+
+.tv-section > .current-tv-category > .category-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.tv-section > .current-tv-category > .category-side > button {
   width: max-content;
   padding: 10px;
   font-family: inherit;
@@ -39,7 +59,7 @@
   transition: all 400ms ease-in-out;
 }
 
-.tv-section > .current-tv-category > button:hover {
+.tv-section > .current-tv-category > .category-side > button:hover {
   cursor: pointer;
   background: #000;
   color: white;
@@ -50,8 +70,8 @@
 .tv-section > .current-tv-container {
   margin: 5vh auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   place-items: center;
 }
 
@@ -86,4 +106,38 @@
 .tv-section > button:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+@media screen and (max-width: 900px) {
+  .tv-section > .current-tv-category {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .tv-section {
+    margin-top: 5vh;
+  }
+
+  .tv-section > .current-tv-category {
+    padding: unset;
+  }
+  .tv-section > .current-tv-category > .search-side {
+    width: 100%;
+  }
+  .tv-section > .current-tv-category > .search-side > form > input {
+    width: 100%;
+  }
+
+  .tv-section > .current-tv-category > .category-side {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .tv-section > .current-tv-category > .category-side > button {
+    font-size: 0.75em;
+  }
 }
